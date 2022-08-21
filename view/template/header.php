@@ -45,10 +45,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+
                 </li>
             </ul>
             <!-- Right navbar links -->
@@ -186,7 +186,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="../template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Admin Jordan</span>
+                <span class="brand-text font-weight-light">Ultimate Developers</span>
             </a>
 
             <!-- Sidebar -->
@@ -198,7 +198,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Jordan Talahua</a>
+                        <a href="#" class="d-block">Admin</a>
                     </div>
                 </div>
 
@@ -233,43 +233,43 @@
                                 <li class="nav-item">
                                     <a href="../dashboard/index.php" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard</p>
+                                        <p>Inicio</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../generos/index.php" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Generos</p>
+                                        <p>Docentes Capacitados</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../actores/index.php" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Actores</p>
+                                        <p>Docentes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../peliculas/index.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Peliculas</p>
+                                        <p>Capacitación</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../actor_peliculas/index.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Actores-Peliculas</p>
+                                        <p>Departamento</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../socios/index.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Socios</p>
+                                        <p>Carrera</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../alquileres/index.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Alquiler</p>
+                                        <p>Sede</p>
                                     </a>
                                 </li>
                             </ul>

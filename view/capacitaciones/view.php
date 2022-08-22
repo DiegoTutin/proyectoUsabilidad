@@ -1,38 +1,48 @@
 <?php  include '../template/header.php'?>
-<?php  include '../../controller/socios/view.php'?>
+<?php  include '../../controller/capacitacion/view.php'?>
     <!-- Main content -->
     <section class="content">
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6 mt-5">
-            <p class="lead"><b>Ver datos socio</b></p>
-            <?php
-                    $row = $result->fetch_assoc();
-            ?>
-            <table class="table table-hover align-middle table-info">
+            <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-4"><b>Ver capacitaciones</b></div>
+                        </div>
+                    </div>
+                <?php
+                        $row = $result->fetch_assoc();
+                ?>
+                <table class="table table-hover align-middle">
                     <tbody>
                         <tr>
-                            <th scope="row">Cédula</th>
-                            <td><?php  echo $row['soc_cedula']?></td>
+                            <th scope="row">ID</th>
+                            <td><?php  echo $row['codigo_capa']?></td>
                         </tr>
                         <tr>
                             <th scope="row">Nombre</th>
-                            <td><?php  echo $row['soc_nombre']?></td>
+                            <td><?php  echo $row['nombre_capa']?></td>
                         </tr>
                         <tr>
-                            <th scope="row">Direccion</th>
-                            <td><?php  echo $row['soc_direccion']?></td>
+                            <th scope="row">Tipo</th>
+                            <td><?php  echo $row['tipo_capa']?></td>
                         </tr>
                         <tr>
-                            <th scope="row">Telefono</th>
-                            <td><?php  echo $row['soc_telefono']?></td>
+                            <th scope="row">Tiempo</th>
+                            <td><?php  echo $row['tiempo_capa']?></td>
                         </tr>
                         <tr>
-                            <th scope="row">Correo</th>
-                            <td><?php  echo $row['soc_correo']?></td>
+                            <th scope="row">Fecha de inicio</th>
+                            <td><?php  echo $row['fecha_inicio_capa']?></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de cierre</th>
+                            <td><?php  echo $row['fecha_fin_capa']?></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
         </div>
     </div>
     </section>

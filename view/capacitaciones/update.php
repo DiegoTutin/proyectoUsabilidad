@@ -1,5 +1,5 @@
 <?php  include '../template/header.php'?>
-<?php include '../../controller/socios/update.php' ?>
+<?php include '../../controller/capacitacion/update.php' ?>
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -7,40 +7,45 @@
         <div class="col-6 mt-5">
             <div class="card">
                 <div class="card-header">
-                    <b>Actualizar socio</b>
+                    <b>Actualizar capacitacion</b>
                 </div>
             </div>
             <?php
                 $row = $result->fetch_assoc();
             ?>
-            <form action="../../controller/socios/update.php" method='POST'>
+            <form action="../../controller/capacitacion/update.php" method='POST'>
             <div class="mb-3 mt-3">
-                <label for="soc_cedula" class="form-label">Cédula</label>
-                <input type="number" class="form-control" id="soc_cedula" name="soc_cedula" aria-describedby="emailHelp" required 
-                value="<?php  echo $row['soc_cedula']?>">
+                <label for="id_capa" class="form-label">ID</label>
+                <input type="text" class="form-control" id="id_capa" name="id_capa" aria-describedby="emailHelp" required
+                value="<?php  echo $row['id_capa']?>">
                 <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
             </div>
             <div class="mb-3">
-                <label for="soc_nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="soc_nombre" name="soc_nombre" required
-                value="<?php  echo $row['soc_nombre']?>">
+                <label for="nombre_capa" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre_capa" name="nombre_capa" required
+                value="<?php  echo $row['nombre_capa']?>">
             </div>
             <div class="mb-3">
-                <label for="soc_direccion" class="form-label">Direccion</label>
-                <input type="text" class="form-control" id="soc_direccion" name="soc_direccion" required
-                value="<?php  echo $row['soc_direccion']?>">
+                <label for="tipo_capa" class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="tipo_capa" name="tipo_capa" required
+                value="<?php  echo $row['tipo_capa']?>">
             </div>
             <div class="mb-3">
-                <label for="soc_telefono" class="form-label">Telefono</label>
-                <input type="text" class="form-control" id="soc_telefono" name="soc_telefono" required
-                value="<?php  echo $row['soc_telefono']?>">
+                <label for="tiempo_capa" class="form-label">Tiempo</label>
+                <input type="text" class="form-control" id="tiempo_capa" name="tiempo_capa" required
+                value="<?php  echo $row['tiempo_capa']?>">
             </div>
             <div class="mb-3">
-                <label for="soc_correo" class="form-label">Correo</label>
-                <input type="text" class="form-control" id="soc_correo" name="soc_correo" required
-                value="<?php  echo $row['soc_correo']?>">
+                <label for="fecha_inicio_capa" class="form-label">Fecha de inicio</label>
+                <input type="date" class="form-control" id="fecha_inicio_capa" name="fecha_inicio_capa" required
+                value="<?php  echo $row['fecha_inicio_capa']?>">
             </div>
-            <input type="hidden" name='soc_id' value="<?php  echo $row['soc_id']?>">
+            <div class="mb-3">
+                <label for="fecha_fin_capa" class="form-label">Fecha de cierre</label>
+                <input type="date" class="form-control" id="fecha_fin_capa" name="fecha_fin_capa" required
+                value="<?php  echo $row['fecha_fin_capa']?>">
+            </div>
+            <input type="hidden" name='codigo_capa' value="<?php  echo $row['codigo_capa']?>">
             <button type="submit" class="btn btn-primary">Actualizar</button>
             </form>
         </div>

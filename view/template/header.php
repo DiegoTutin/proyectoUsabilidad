@@ -249,7 +249,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../peliculas/index.php" class="nav-link">
+                                    <a href="../capacitaciones/index.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Capacitación</p>
                                     </a>

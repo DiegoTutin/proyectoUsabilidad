@@ -1,8 +1,8 @@
 <?php  include '../template/header.php'?>
 <?php  include '../../controller/docentes_capacitados/index.php' ?>
 <div class="row">
-    <div class=col-2></div>
-    <div class="col1 px-5">
+    <div class="col-1"></div>
+    <div class="col-12 px-5 mt-5 ">
         <div class="card">
             <div class="card-header">
                 <b>DOCENTES CAPACITADOS</b>
@@ -10,7 +10,6 @@
             <table class="table table-hover align-middle">
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
                         <th scope="col">ID</th>
                         <th scope="col">Cedula</th>
                         <th scope="col">Nombres</th>
@@ -28,8 +27,7 @@
                             if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
                                 echo'<tr>';
-                                echo '<th scope="row">'.$row["codigo_dc"].'</th>';
-                                echo'<td>'.$row["id_doc"].'</td>';
+                                echo '<th scope="row">'.$row["id_doc"].'</th>';
                                 echo'<td>'.$row["cedula_doc"].'</td>';
                                 echo'<td>'.$row["nombre_doc"].'</td>';
                                 echo'<td>'.$row["apellido_doc"].'</td>';
@@ -48,7 +46,7 @@
                         ?>
                 </tbody>
             </table>
+        </div>
     </div>
-</div>
 </div>
 <?php  include '../template/footer.php'?>

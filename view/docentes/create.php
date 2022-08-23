@@ -1,36 +1,55 @@
 <?php include '../template/header.php' ?>
-<?php include '../../controller/peliculas/create.php'?>
+<?php include '../../controller/docentes/create.php'?>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6 mt-5">
         <div class="card">
             <div class="card-header">
-                <b>Registrar Pelicula</b>
+                <b>Registrar Docente</b>
             </div>
         </div>
-        <form action='../../controller/peliculas/create.php' method="POST" novalidate>
+        <form action='../../controller/docentes/create.php' method="POST" novalidate>
+            <div class="mb-3">
+                <label class="form-label">ID</label>
+                <input type="text" class="form-control" id="id_doc" name="id_doc" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cedula</label>
+                <input type="text" class="form-control" id="cedula_doc" name="cedula_doc" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombre_doc" name="nombre_doc" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellido_doc" name="apellido_doc" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="titulo_doc" name="titulo_doc" required>
+            </div>
             <div class="mb-3 mt-3">
-                <label class="form-label">Género</label>
-                <select name="gen_id" id="gen_id">
+                <label for="codigo_carr" class="form-label">Carrera</label>
+                <select name="codigo_carr" id="codigo_carr" required class="form-control">
                     <?php
-                        while($row = $result->fecth_assoc())
-                        {
-                            echo '<option value="'.$row['gen_id'].'">'.$row['gen_nombre'].'</option>';
-                        }
-                    ?>
+                            while($row = $result_carrera->fetch_assoc())
+                            {
+                                echo '<option name="codigo_carr" value="'.$row['codigo_carr'].'">'.$row['nombre_carr'].'</option>';
+                            }
+                        ?>
                 </select>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="pel_nombre" name="pel_nombre" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Costo</label>
-                <input type="number" class="form-control" id="pel_costo" name="pel_costo" required>
-            </div>
-            <div class="mb-3">
-                <label for="telefonoSocio" class="form-label">Fechas Estreno</label>
-                <input type="date" class="form-control" id="pel_fecha_estreno" name="pel_fecha_estreno" required>
+            <div class="mb-3 mt-3">
+                <label for="codigo_capa" class="form-label">CAPACITACION</label>
+                <select name="codigo_capa" id="codigo_capa" required class="form-control">
+                    <?php
+                            while($row = $result_capacitacion->fetch_assoc())
+                            {
+                                echo '<option name="codigo_capa" value="'.$row['codigo_capa'].'">'.$row['nombre_capa'].'</option>';
+                            }
+                        ?>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>

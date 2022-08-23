@@ -1,23 +1,24 @@
 <?php  include '../template/header.php'?>
-<?php  include '../../controller/peliculas/index.php' ?>
+<?php  include '../../controller/carrera/index.php' ?>
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-8 mt-5">
+    <div class="col-10 mt-5">
         <div class="card">
             <div class="card-header">
-                <b>Docentes Capacitados</b>
-                <a href="create.php"><button type="button" class="btn btn-success"
-                        style="margin-left:450px;">Agregar</button></a>
-            </div>
+                    <div class="row align-items-center">
+                        <div class="col-4"><b>Carreras registradas</b></div>
+                        <div class="col-6"></div>
+                        <div class="col-2"><a href="create.php"><button type="button" class="btn btn-success">Agregar</button></a></div>
+                    </div>
+                </div>
             <table class="table table-hover align-middle">
                 <thead>
                     <tr>
-                        <th scope="col">Numero</th>
-                        <th scope="col">Genero</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Costo</th>
-                        <th scope="col">Fechas de estreno</th>
-                        <th scope="col" colspan="3">Opciones</th>
+                        <th scope="col">Sede</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,15 +26,13 @@
                             if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
                                 echo'<tr>';
-                                echo '<th scope="row">'.$row["pel_id"].'</th>';
-                                echo'<td>'.$row["gen_nombre"].'</td>';
-                                echo'<td>'.$row["pel_nombre"].'</td>';
-                                echo'<td>'.$row["pel_costo"].'</td>';
-                                echo'<td>'.$row["pel_fecha_estreno"].'</td>';
+                                echo'<td>'.$row["id_carr"].'</td>';
+                                echo'<td>'.$row["nombre_carr"].'</td>';
+                                echo'<td>'.$row["nombre_sed"].'</td>';
+                                echo'<td>'.$row["nombre_dep"].'</td>';
                                 echo'
-                                <td><button><a href="update.php?pel_id='.$row["pel_id"].'"><i class="fa fa-pen text-success"></i></a></button> 
-                                <button><a href="view.php?pel_id='.$row["pel_id"].'"><i class="fa fa-eye text-primary"></i></a></button>
-                                <button><a href="delete.php?pel_id='.$row["pel_id"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
+                                <td><button><a href="update.php?codigo_carr='.$row["codigo_carr"].'"><i class="fa fa-pen text-success"></i></a></button> 
+                                <button><a href="delete.php?codigo_carr='.$row["codigo_carr"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
                                 echo '</tr>';
                             }
                             } else {
@@ -44,5 +43,6 @@
             </table>
         </div>
     </div>
+    <div class="col-1"></div>
 </div>
 <?php  include '../template/footer.php'?>

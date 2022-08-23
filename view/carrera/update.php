@@ -1,51 +1,56 @@
 <?php  include '../template/header.php'?>
-<?php include '../../controller/peliculas/update.php' ?>
+<?php include '../../controller/carrera/update.php' ?>
     <div class="row">
     <?php $row1 = $result1->fetch_assoc() ?>
         <div class="col-3"></div>
         <div class="col-6 mt-5">
             <div class="card">
                 <div class="card-header">
-                    <b>Actualizar Pelicula</b>
+                    <b>Actualizar Carrera</b>
                 </div>
             </div>
 
-            <form action="../../controller/peliculas/update.php" method='POST' >
+            <form action="../../controller/carrera/update.php" method='POST'>
             <?php
                 $row = $result->fetch_assoc();
             ?>
-            <select class="form-select form-control" id="gen_id" name="gen_id" required>
-                    <option selected disabled value="">Género</option>
+            <div class="mb-3 mt-3">
+                <label for="id_carr" class="id_carr">ID</label>
+                <input type="text" class="form-control" id="id_carr" name="id_carr"
+                value="<?php  echo $row1['id_carr']?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="nombre_carr" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre_carr" name="nombre_carr"
+                value="<?php  echo $row1['nombre_carr']?>" required>
+            </div>
+            <label class="form-label">Sede</label>
+            <select class="form-control mb-3" id="codigo_sed" name="codigo_sed" required>
+                    <?php
+                    while($row = $result->fetch_assoc())
+                    {
+                        echo '<option value="'.$row['codigo_sed'].'">'.$row['nombre_sed'].'</option>';
+                    }
+                    ?>
+                    
+            </select>
+            <label class="form-label">Departamento</label>
+            <select class="form-control mb-3" id="codigo_dep" name="codigo_dep" required>
                     <?php
                     if ($result->num_rows > 0){
                         while($row = $result->fetch_assoc()) {
-                            if($row1["gen_id"]==$row["gen_id"]){
-                                echo '<option selected disable name="gen_id" value="'.$row["gen_id"].'">'.$row["gen_nombre"].'</option>';
+                            if($row1["codigo_dep"]==$row["codigo_dep"]){
+                                echo '<option selected disable name="codigo_dep" value="'.$row["codigo_dep"].'">'.$row["nombre_dep"].'</option>';
                             }else{
-                                echo '<option name="gen_id" value="'.$row["gen_id"].'">'.$row["gen_nombre"].'</option>';
+                                echo '<option name="codigo_dep" value="'.$row["codigo_dep"].'">'.$row["nombre_dep"].'</option>';
                             }
                             
                         }
                     }
                     ?>
                     
-                </select>
-            <div class="mb-3">
-                <label for="pel_nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control"
-                value="<?php echo $row1["pel_nombre"]?>" required id="pel_nombre" name="pel_nombre">
-            </div>
-            <div class="mb-3">
-                <label for="pel_costo" class="form-label">Costo</label>
-                <input type="number" class="form-control" id="pel_costo" name="pel_costo"
-                value="<?php  echo $row1['pel_costo']?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="pel_fecha_estreno" class="form-label">Fechas Estreno</label>
-                <input type="date" class="form-control" id="pel_fecha_estreno" name="pel_fecha_estreno"
-                value="<?php  echo $row1['pel_fecha_estreno']?>" required>
-            </div>
-            <input type="hidden" name="pel_id" value="<?php echo $row1['pel_id'];?>">
+            </select>
+            <input type="hidden" name="codigo_carr" value="<?php echo $row1['codigo_carr'];?>">
             <button type="submit" class="btn btn-success">Actualizar</button>
             </form>
         </div>

@@ -1,10 +1,8 @@
 <?php
     include '../../model/conectar.php';
-    
-    $sql = "SELECT dc.codigo_dc , do.id_doc, do.cedula_doc, do.nombre_doc, do.apellido_doc, do.titulo_doc,
-    ca.nombre_carr, capa.nombre_capa, capa.tipo_capa, capa.tiempo_capa, capa.fecha_inicio_capa, capa.fecha_fin_capa
-    FROM docentes_capacitados dc, docentes do, carrera ca, capacitacion capa
-    WHERE dc.codigo_doc = do.codigo_doc AND do.codigo_carr = ca.codigo_carr AND do.codigo_capa = capa.codigo_capa";
+    $sql = "SELECT c.codigo_carr, c.id_carr, c.nombre_carr, s.nombre_sed, d.nombre_dep FROM carrera c 
+    INNER JOIN sede s ON c.codigo_sed = s.codigo_sed 
+    INNER JOIN departamento d ON c.codigo_dep = d.codigo_dep";
     $result = $conn->query($sql);
     include '../../model/desconectar.php';
 ?>

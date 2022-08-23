@@ -19,7 +19,7 @@
         $titulo_doc = $_POST['titulo_doc'];
         $codigo_carr = $_POST['codigo_carr'];
         $codigo_capa = $_POST['codigo_capa'];
-
+        
         $sql = "INSERT INTO docentes (codigo_doc,id_doc,cedula_doc, nombre_doc,
         apellido_doc,titulo_doc,codigo_carr,codigo_capa) 
         VALUES (0,'".$id_doc."','".$cedula_doc."','".$nombre_doc."','".$apellido_doc."','".$titulo_doc."',
@@ -27,7 +27,5 @@
         $result = $conn->query($sql);
         header('Location: ../../view/docentes/index.php');
         include '../../model/desconectar.php';
-
     }
-
 ?>

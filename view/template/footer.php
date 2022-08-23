@@ -50,5 +50,5 @@
 <script src="../template/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../template/dist/js/pages/dashboard3.js"></script>
-</body>
+</body>z
 </html>

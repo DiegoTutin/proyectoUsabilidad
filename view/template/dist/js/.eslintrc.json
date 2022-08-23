@@ -42,16 +42,16 @@
       "never"
     ],
     "strict": "error",
-    "unicorn/no-array-for-each": "off",
-    "unicorn/no-for-loop": "off",
-    "unicorn/no-null": "off",
-    "unicorn/numeric-separators-style": "off",
-    "unicorn/prefer-dataset": "off",
-    "unicorn/prefer-includes": "off",
-    "unicorn/prefer-module": "off",
-    "unicorn/prefer-node-append": "off",
-    "unicorn/prefer-query-selector": "off",
-    "unicorn/prefer-spread": "off",
-    "unicorn/prevent-abbreviations": "off"
+    "unicorn/no-array-for-each": "on",
+    "unicorn/no-for-loop": "on",
+    "unicorn/no-null": "on",
+    "unicorn/numeric-separators-style": "on",
+    "unicorn/prefer-dataset": "on",
+    "unicorn/prefer-includes": "on",
+    "unicorn/prefer-module": "on",
+    "unicorn/prefer-node-append": "on",
+    "unicorn/prefer-query-selector": "on",
+    "unicorn/prefer-spread": "on",
+    "unicorn/prevent-abbreviations": "on"
   }
 }

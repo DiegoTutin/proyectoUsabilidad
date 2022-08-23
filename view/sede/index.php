@@ -18,7 +18,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Provincia</th>
                         <th scope="col">Ciudad</th>
-
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,8 @@
                                 echo'<td>'.$row["nombre_sed"].'</td>';
                                 echo'<td>'.$row["provincia_sed"].'</td>';
                                 echo'<td>'.$row["ciudad_sed"].'</td>';
-                                echo'';
+                                echo'
+                                <td><button><a href="update.php?codigo_sed='.$row["codigo_sed"].'"><i class="fa fa-pen text-success"></i></a></button></td>';
                                 echo '</tr>';
                             }
                             } else {

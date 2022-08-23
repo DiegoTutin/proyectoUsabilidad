@@ -1,6 +1,5 @@
 <?php
     include '../../model/conectar.php';
-    
     $sql = "SELECT do.id_doc , do.nombre_doc, do.nombre_doc, do.apellido_doc, do.titulo_doc,
     ca.nombre_carr, capa.nombre_capa
     FROM docentes do, carrera ca, capacitacion capa

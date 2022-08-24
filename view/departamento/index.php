@@ -5,11 +5,8 @@
     <div class="col-10 mt-4">
         <div class="card">
             <div class="card-header">
-<<<<<<< HEAD
-                <b>Departamento</b>
-=======
                 <b>DEPARTAMENTOS</b>
->>>>>>> 9cb52b23b00f0e809e2c14beabd134bcf371f62f
+
                 <a href="create.php"><button type="button" class="btn btn-success"
                         style="margin-left:850px;">Agregar</button></a>
             </div>

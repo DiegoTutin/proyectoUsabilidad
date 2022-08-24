@@ -5,7 +5,7 @@
     <div class="col-8 mt-5">
         <div class="card">
             <div class="card-header">
-                <b>Docentes Capacitados</b>
+                <b>Departamento</b>
                 <a href="create.php"><button type="button" class="btn btn-success"
                         style="margin-left:450px;">Agregar</button></a>
             </div>
@@ -28,7 +28,6 @@
                                 echo'<td>'.$row["nombre_dep"].'</td>';
                                 echo'
                                 <td><button><a href="update.php?codigo_dep='.$row["codigo_dep"].'"><i class="fa fa-pen text-success"></i></a></button> 
-                                <button><a href="view.php?codigo_dep='.$row["codigo_dep"].'"><i class="fa fa-eye text-primary"></i></a></button>
                                 <button><a href="delete.php?codigo_dep='.$row["codigo_dep"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
                                 echo '</tr>';
                             }

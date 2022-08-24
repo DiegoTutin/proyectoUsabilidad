@@ -1,47 +1,29 @@
 <?php  include '../template/header.php'?>
-<?php  include '../../controller/peliculas/delete.php'?>
+<?php  include '../../controller/departamento/delete.php'?>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6 mt-5">
         <div class="card">
             <div class="card-header">
-                <b>Eliminar Pelicula</b>
+                <b>Eliminar Departamento</b>
             </div>
         </div>
-        <form action="../../controller/peliculas/delete.php" method="post">
+        <form action='../../controller/departamento/delete.php' method="POST" novalidate>
             <?php
-                    $row = $result->fetch_assoc();
-                ?>
-            <div class="mb-3 mt-3">
-                <label for="pel_id" class="form-label">ID</label>
-                <input type="number" class="form-control" readonly id="pel_id" aria-describedby="emailHelp"
-                    value="<?php echo $row['pel_id']?>">
+                $row = $result->fetch_assoc();
+            ?>    
+        <div class="mb-3">
+                <label class="form-label">ID Departamento</label>
+                <input type="text" class="form-control" id="id_dep" name="id_dep" readonly
+                value="<?php echo $row['id_dep']?>">
             </div>
             <div class="mb-3">
-                <label for="gen_nombre" class="form-label">Género</label>
-                <input type="text" class="form-control" readonly id="gen_nombre"
-                    value="<?php echo $row['gen_nombre']?>">
+                <label class="form-label">Nombre Departamento</label>
+                <input type="text" class="form-control" id="nombre_dep" name="nombre_dep" readonly
+                value="<?php echo $row['nombre_dep']?>">
             </div>
-            <div class="mb-3">
-                <label for="pel_nombre" class="form-label">Pelicula</label>
-                <input type="text" class="form-control" readonly id="pel_nombre"
-                    value="<?php echo $row['pel_nombre']?>">
-            </div>
-            <div class="mb-3">
-                <label for="pel_costo" class="form-label">Costo</label>
-                <input type="number" class="form-control" readonly id="pel_costo"
-                    value="<?php echo $row['pel_costo']?>">
-            </div>
-            <div class="mb-3">
-                <label for="pel_fecha_estreno" class="form-label">Fechas Estreno</label>
-                <input type="date" class="form-control" readonly id="pel_fecha_estreno"
-                    value="<?php echo $row['pel_fecha_estreno']?>">
-
-            </div>
-            <form action="../../controller/peliculas/delete.php" method="post">
-            <input type="hidden" name="pel_id" value="<?php echo $row['pel_id'];?>">
-            <input type="submit" value="Eliminar" class="btn btn-danger">
-        </form>
+            <input type="hidden" name="codigo_dep" value="<?php echo $row['codigo_dep']?>">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
         </form>
     </div>
 </div>

@@ -17,6 +17,7 @@
                 <input type="text" class="form-control" id="id_dep" name="id_dep" requerid
                 value="<?php echo $row['id_dep']?>">
             </div>
+            
             <div class="mb-3">
                 <label class="form-label">Nombre Departamento</label>
                 <input type="text" class="form-control" id="nombre_dep" name="nombre_dep" requerid

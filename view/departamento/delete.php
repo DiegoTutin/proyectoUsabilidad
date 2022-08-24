@@ -12,6 +12,7 @@
             <?php
                 $row = $result->fetch_assoc();
             ?>    
+            
         <div class="mb-3">
                 <label class="form-label">ID Departamento</label>
                 <input type="text" class="form-control" id="id_dep" name="id_dep" readonly

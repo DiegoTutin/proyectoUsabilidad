@@ -23,4 +23,6 @@
         header('location: ../../view/departamento/index.php');
     }
     
+
+    
 ?>

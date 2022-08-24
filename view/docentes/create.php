@@ -51,6 +51,7 @@
                         ?>
                 </select>
             </div>
+            <input type="hidden" name="codigo_doc" value="<?php echo $row['codigo_doc']?>">
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>

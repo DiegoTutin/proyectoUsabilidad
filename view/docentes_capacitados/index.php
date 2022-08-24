@@ -2,7 +2,7 @@
 <?php  include '../../controller/docentes_capacitados/index.php' ?>
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-12 px-5 mt-5 ">
+    <div class="col-10 mt-5">
         <div class="card">
             <div class="card-header">
                 <b>DOCENTES CAPACITADOS</b>
@@ -11,15 +11,11 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Cedula</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellidos</th>
                         <th scope="col">Titulo</th>
                         <th scope="col">Carrera</th>
                         <th scope="col">Capacitación</th>
-                        <th scope="col">Horas</th>
-                        <th scope="col">Inicio</th>
-                        <th scope="col">Final</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,16 +24,13 @@
                             while($row = $result->fetch_assoc()) {
                                 echo'<tr>';
                                 echo '<th scope="row">'.$row["id_doc"].'</th>';
-                                echo'<td>'.$row["cedula_doc"].'</td>';
                                 echo'<td>'.$row["nombre_doc"].'</td>';
                                 echo'<td>'.$row["apellido_doc"].'</td>';
                                 echo'<td>'.$row["titulo_doc"].'</td>';
                                 echo'<td>'.$row["nombre_carr"].'</td>';
                                 echo'<td>'.$row["nombre_capa"].'</td>';
-                                echo'<td>'.$row["tiempo_capa"].'</td>';
-                                echo'<td>'.$row["fecha_inicio_capa"].'</td>';
-                                echo'<td>'.$row["fecha_fin_capa"].'</td>';
-                                echo'';
+                                echo'
+                                <td><button><a href="view.php?codigo_dc='.$row["codigo_dc"].'"><i class="fa fa-eye text-primary"></i></a></button>';
                                 echo '</tr>';
                             }
                             } else {

@@ -30,5 +30,4 @@
         include '../../model/desconectar.php';
         header('location: ../../view/capacitaciones/index.php');
     }
-    echo 'hola 2';
 ?>

@@ -1,5 +1,6 @@
 <?php  include '../template/header.php'?>
 <?php  include '../../controller/dashboard/index.php'?>
+
 <!-- Main content -->
 <section class="content">
     <div class="row">
@@ -64,98 +65,66 @@
         <!-- /.col -->
     </div>
 </section>
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Capacitaciones Realizadas</h3>
-                            <a href="javascript:void(0);">Ver Reporte</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">820</span>
-                                <span>Capacitaciones realizadas semanales</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 12.5%
-                                </span>
-                                <span class="text-muted">Desde la semana pasada</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <div class="position-relative mb-4">
-                            <canvas id="visitors-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> Esta semana
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Semana Pasada
-                            </span>
-                        </div>
-                    </div>
+<div class="row justify-content-center">
+    <div class="col-lg-8 ">
+        <div class="card ">
+            <div class="card-header border-0 ">
+                <div class="d-flex justify-content-center">
+                    <H3 class="card-title text-bold text-lg">Docentes Capacitados Mensualmente</H3>
                 </div>
-                <!-- /.card -->
-
-                <!-- /.card -->
             </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Inversión Económica</h3>
-                            <a href="javascript:void(0);">Ver Reporte</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">$18,230</span>
-                                <span>Inversión a lo largo del tiempo</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 33.1%
-                                </span>
-                                <span class="text-muted">Desde el mes pasado</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> Este año
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Anterior año
-                            </span>
-                        </div>
-                    </div>
+            <div class="card-body">
+                <div class="d-flex ">
+                    <p class="d-flex flex-column">
+                        <span class="text-bold text-lg ">Total : <?php echo $total_doc_Capacitados?></span>
+                    </p>
                 </div>
-                <!-- /.card -->
-
-
+                <div class="position-relative mb-4">
+                    <canvas id="grafico-doc-capa" height="100"></canvas>
+                </div>
             </div>
-            <!-- /.col-md-6 -->
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container-fluid -->
 </div>
+</section>
+
+
+
+
+
+<script>
+const labels = <?php echo $meses_Doc_Capa ?>
+
+const data = {
+    labels: labels,
+    datasets: [{
+        label: 'Docentes Capacitados',
+        data: <?php echo $total_docen_capa_mes ?>,
+        backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)',
+            'rgb(120, 165, 120)',
+            'rgb(160, 220, 200)',
+            'rgb(90, 110, 90)',
+            'rgb(145, 50, 200)'
+
+        ],
+        hoverOffset: 4
+    }]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
+};
+</script>
+<script>
+const myChart = new Chart(
+    document.getElementById('grafico-doc-capa'),
+    config
+);
+</script>
+
+
 <?php  include '../template/footer.php'?>

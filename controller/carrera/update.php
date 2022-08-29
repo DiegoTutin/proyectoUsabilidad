@@ -1,12 +1,12 @@
 <?php
     include '../../model/conectar.php';
-    $sql = "SELECT * FROM sede";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM sede ORDER BY nombre_sed;";
+    $result_sed = $conn->query($sql);
     include '../../model/desconectar.php';
 
     include '../../model/conectar.php';
-    $sql = "SELECT * FROM departamento";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM departamento ORDER BY nombre_dep;";
+    $result_dep = $conn->query($sql);
     include '../../model/desconectar.php';
 
     if(isset($_GET['codigo_carr'])){
@@ -20,7 +20,7 @@
         include '../../model/desconectar.php';
         }
 
-    if(isset($_POST['id_carr'])){
+    if(isset($_POST['codigo_carr'])){
         include '../../model/conectar.php';
         $codigo_carr = $_POST['codigo_carr'];
         $id_carr = $_POST['id_carr'];
@@ -32,6 +32,6 @@
         WHERE codigo_carr = ".$codigo_carr;
         $result = $conn->query($sql);
         include '../../model/desconectar.php';
-        header('Location: ../../view/peliculas/index.php');
+        header('Location: ../../view/carrera/index.php');
     }
 ?>

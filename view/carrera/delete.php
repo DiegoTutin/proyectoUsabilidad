@@ -39,10 +39,15 @@
                     value="<?php echo $row2['nombre_dep']?>" name="nombre_dep">
             </div>
             <form action="../../controller/peliculas/delete.php" method="post">
-            <input type="hidden" name="codigo_carr" value="<?php echo $row['codigo_carr'];?>">
-            <input type="submit" value="Eliminar" class="btn btn-danger mb-3">
+                <input type="hidden" name="codigo_carr" value="<?php echo $row['codigo_carr'];?>">
+                <script type="text/javascript">
+                    function noBorrar(){
+                        swal("Cuidado!", "No puedes borrar un registro relacionado con otra tabla!", "error");
+                    }
+                </script>
+            </form>
         </form>
-        </form>
+        <input type="submit" value="Eliminar" class="btn btn-danger mb-3" onclick=noBorrar()>
     </div>
 </div>
 

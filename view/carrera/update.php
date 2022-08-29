@@ -10,10 +10,7 @@
                 </div>
             </div>
 
-            <form action="../../controller/carrera/update.php" method='POST'>
-            <?php
-                $row = $result->fetch_assoc();
-            ?>
+            <form action="../../controller/carrera/update.php" method='POST' novalidate>
             <div class="mb-3 mt-3">
                 <label for="id_carr" class="id_carr">ID</label>
                 <input type="text" class="form-control" id="id_carr" name="id_carr"
@@ -27,9 +24,15 @@
             <label class="form-label">Sede</label>
             <select class="form-control mb-3" id="codigo_sed" name="codigo_sed" required>
                     <?php
-                    while($row = $result->fetch_assoc())
-                    {
-                        echo '<option value="'.$row['codigo_sed'].'">'.$row['nombre_sed'].'</option>';
+                    if ($result_sed->num_rows > 0){
+                        while($row_sed = $result_sed->fetch_assoc()) {
+                            if($row1["codigo_sed"]==$row_sed["codigo_sed"]){
+                                echo '<option selected disable name="codigo_sed" value="'.$row_sed["codigo_sed"].'">'.$row_sed["nombre_sed"].'</option>';
+                            }else{
+                                echo '<option name="codigo_sed" value="'.$row_sed["codigo_sed"].'">'.$row_sed["nombre_sed"].'</option>';
+                            }
+                            
+                        }
                     }
                     ?>
                     
@@ -37,12 +40,12 @@
             <label class="form-label">Departamento</label>
             <select class="form-control mb-3" id="codigo_dep" name="codigo_dep" required>
                     <?php
-                    if ($result->num_rows > 0){
-                        while($row = $result->fetch_assoc()) {
-                            if($row1["codigo_dep"]==$row["codigo_dep"]){
-                                echo '<option selected disable name="codigo_dep" value="'.$row["codigo_dep"].'">'.$row["nombre_dep"].'</option>';
+                    if ($result_dep->num_rows > 0){
+                        while($row_dep = $result_dep->fetch_assoc()) {
+                            if($row1["codigo_dep"]==$row_dep["codigo_dep"]){
+                                echo '<option selected disable name="codigo_dep" value="'.$row_dep["codigo_dep"].'">'.$row_dep["nombre_dep"].'</option>';
                             }else{
-                                echo '<option name="codigo_dep" value="'.$row["codigo_dep"].'">'.$row["nombre_dep"].'</option>';
+                                echo '<option name="codigo_dep" value="'.$row_dep["codigo_dep"].'">'.$row_dep["nombre_dep"].'</option>';
                             }
                             
                         }

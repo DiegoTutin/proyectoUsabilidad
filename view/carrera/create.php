@@ -5,7 +5,7 @@
     <div class="col-6 mt-5">
         <div class="card">
             <div class="card-header">
-                <b>Registrar Pelicula</b>
+                <b>Registrar Carrera</b>
             </div>
         </div>
         <form action='../../controller/carrera/create.php' method="POST">

@@ -24,8 +24,13 @@
                 value="<?php echo $row['nombre_dep']?>">
             </div>
             <input type="hidden" name="codigo_dep" value="<?php echo $row['codigo_dep']?>">
-            <button type="submit" class="btn btn-danger">Eliminar</button>
         </form>
+        <script type="text/javascript">
+                    function noBorrar(){
+                        swal("Cuidado!", "No puedes borrar un registro relacionado con otra tabla!", "error");
+                    }
+        </script>
+        <button type="submit" class="btn btn-danger" onclick = noBorrar()>Eliminar</button>
     </div>
 </div>
 

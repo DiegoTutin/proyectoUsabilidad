@@ -31,7 +31,8 @@
                                 echo'<td>'.$row["nombre_sed"].'</td>';
                                 echo'<td>'.$row["nombre_dep"].'</td>';
                                 echo'
-                                <td><button><a href="delete.php?codigo_carr='.$row["codigo_carr"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
+                                <td><button><a href="delete.php?codigo_carr='.$row["codigo_carr"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button>
+                                <button><a href="update.php?codigo_carr='.$row["codigo_carr"].'"><i class="fa fa-pen text-success" aria-hidden="true"></i></a></button></td>';
                                 echo '</tr>';
                             }
                             } else {
